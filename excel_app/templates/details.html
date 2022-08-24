@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Details</title>
+</head>
+<body>
+{% block content %}
+<table>
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Address</th>
+    </tr>
+    {% for obj in object_list %}
+    <tr>
+        <td>{{ obj.id }} </td>
+        <td>{{ obj.name }} </td>
+        <td>{{ obj.gender }} </td>
+        <td>{{ obj.email }} </td>
+        <td>{{ obj.address__address }} </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+</body>
+</html>
