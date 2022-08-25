@@ -31,11 +31,11 @@ def upload_file(request):
                                           email=row_data[3], address_id=address)
                     objects.append(obj)
 
-                CustomerDetails.objects.bulk_create(objects)
+            CustomerDetails.objects.bulk_create(objects)
 
-                object_list = list(CustomerDetails.objects.all().values('id', 'name', 'gender', 'email',
+            object_list = list(CustomerDetails.objects.all().values('id', 'name', 'gender', 'email',
                                                                         'address__address'))
-                return render(request, 'details.html', {'object_list': object_list})
+            return render(request, 'details.html', {'object_list': object_list})
 
     else:
         form = UploadFileForm()
