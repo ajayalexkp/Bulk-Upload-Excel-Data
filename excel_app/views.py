@@ -32,6 +32,7 @@ def upload_file(request):
                     details.append(obj)
 
             CustomerDetails.objects.bulk_create(details)
+            messages.info(request, 'Excel file uploaded successfully.')
 
     else:
         form = UploadFileForm()
