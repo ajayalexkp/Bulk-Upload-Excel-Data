@@ -41,7 +41,7 @@ def upload_file(request):
 
 def details(request):
     details_list = list(CustomerDetails.objects.all().values('id', 'name', 'gender', 'email', 'address__address'))
-    return render(request, 'details.html', {'object_list': details_list})
+    return render(request, 'details.html', {'details_list': details_list})
 
 
 
