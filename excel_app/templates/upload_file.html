@@ -11,8 +11,11 @@
     {{form.as_p}}
     <button type="submit">Submit</button>
 </form>
+<br>
+<form action="{% url 'details' %}">
+    <button type="submit">View</button>
+</form>
 {% endblock %}
-    
 {% for message in messages %}
   {{ message }}
 {% endfor %}
