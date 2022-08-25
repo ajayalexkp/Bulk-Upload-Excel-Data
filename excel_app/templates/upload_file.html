@@ -12,5 +12,9 @@
     <button type="submit">Submit</button>
 </form>
 {% endblock %}
+    
+{% for message in messages %}
+  {{ message }}
+{% endfor %}
 </body>
 </html>
