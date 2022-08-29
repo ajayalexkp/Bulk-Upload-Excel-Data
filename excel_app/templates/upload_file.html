@@ -6,6 +6,7 @@
 </head>
 <body>
 {% block content %}
+<div>
 <form action="{% url 'upload_file' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
@@ -15,6 +16,7 @@
 <form action="{% url 'details' %}">
     <button type="submit">View</button>
 </form>
+</div>
 {% endblock %}
 {% for message in messages %}
   {{ message }}
